@@ -1,4 +1,4 @@
-CREATE TABLE trip (
+CREATE TABLE travel (
     id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     destination VARCHAR(255),
     picture VARCHAR(255),

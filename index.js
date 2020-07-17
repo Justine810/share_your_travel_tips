@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended : true}));
 
-connection.query('SELECT id, destination, tips FROM trip', (err, res) => {
+connection.query('SELECT id, destination, tips FROM travel', (err, res) => {
     console.log(res);
 });
 
