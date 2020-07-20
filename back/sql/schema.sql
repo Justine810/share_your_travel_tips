@@ -39,19 +39,19 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `share_your_tt`.`trip_has_category` (
-  `category_id` INT(11) NOT NULL,
   `trip_id` INT(11) NOT NULL,
-  PRIMARY KEY (`category_id`, `trip_id`),
-  INDEX `fk_category_has_trip_trip1_idx` (`trip_id` ASC),
-  INDEX `fk_category_has_trip_category_idx` (`category_id` ASC),
-  CONSTRAINT `fk_category_has_trip_category`
-    FOREIGN KEY (`category_id`)
-    REFERENCES `share_your_tt`.`category` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_category_has_trip_trip1`
+  `category_id` INT(11) NOT NULL,
+  PRIMARY KEY (`trip_id`, `category_id`),
+  INDEX `fk_trip_has_category_category1_idx` (`category_id` ASC),
+  INDEX `fk_trip_has_category_trip_idx` (`trip_id` ASC),
+  CONSTRAINT `fk_trip_has_category_trip`
     FOREIGN KEY (`trip_id`)
     REFERENCES `share_your_tt`.`trip` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_trip_has_category_category1`
+    FOREIGN KEY (`category_id`)
+    REFERENCES `share_your_tt`.`category` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

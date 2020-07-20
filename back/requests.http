@@ -2,13 +2,13 @@
 POST http://localhost:5000/api/category
 Content-Type: application/json
 
-{"category_name":"détente"}
+{"category_name":"restau"}
 
 ###CONSULTER TOUTES LES CATÉGORIES
 GET http://localhost:5000/api/category
 
 ###CONSULTER UNE CATÉGORIE AC SON ID
-GET http://localhost:5000/api/category/9
+GET http://localhost:5000/api/category/1
 
 ###MODIFIER UNE CATÉGORIE
 PUT http://localhost:5000/api/category/2
@@ -17,9 +17,9 @@ Content-Type: application/json
 {"category_name":"aventure"}
 
 ###SUPPRIMER UNE CATÉGORIE
-DELETE http://localhost:5000/api/category/4
+DELETE http://localhost:5000/api/category/1
 
-###CONSULTER TOUTES LES CONTINENTS
+###CONSULTER TOUS LES CONTINENTS
 GET http://localhost:5000/api/continent
 
 ###CONSULTER UN CONTINENT AC SON ID
@@ -30,7 +30,7 @@ POST http://localhost:5000/api/trip
 Content-Type: application/json
 
 {"destination":"Sri Lanka",
-"picture":"url",
+"picture":"https://zupimages.net/viewer.php?id=20/30/4p6x.jpg",
 "tips":"Randonnée Adam's Peak de nuit pendant la période du pélérinage",
 "continent_id":4}
 
@@ -38,16 +38,16 @@ Content-Type: application/json
 GET http://localhost:5000/api/trip
 
 ###CONSULTER UN VOYAGE AC SON ID
-GET http://localhost:5000/api/trip/3
+GET http://localhost:5000/api/trip/8
 
 ###MODIFIER UN VOYAGE
-PUT http://localhost:5000/api/trip/3
+PUT http://localhost:5000/api/trip/8
 Content-Type: application/json
 
 {"tips":"test"}
 
 ###SUPPRIMER UN VOYAGE
-DELETE http://localhost:5000/api/trip/3
+DELETE http://localhost:5000/api/trip/7
 
 
 

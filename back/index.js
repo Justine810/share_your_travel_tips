@@ -76,8 +76,6 @@ app.delete('/api/category/:id', (req, res) => {
     });
 });
 
-// CRÉER ET AFFECTER UNE CATÉGORIE À UN VOYAGE
-
 // CRÉER UN VOYAGE
 app.post('/api/trip', (req, res) => {
     const newTrip = req.body;
@@ -95,7 +93,7 @@ app.post('/api/trip', (req, res) => {
 
 // CONSULTER TOUS LES VOYAGES
 app.get('/api/trip', (req, res) => {
-    connection.query('SELECT * FROM trip', (err, results) => {
+    connection.query('SELECT trip.*, continent_name FROM trip JOIN continent ON continent.id=trip.continent_id', (err, results) => {
       if (err){
         res.status(500).json({message:'erreur'});
       } else {
@@ -108,7 +106,7 @@ app.get('/api/trip', (req, res) => {
 // CONSULTER UN VOYAGE AVEC SON ID
 app.get('/api/trip/:id', (req, res) => {
     const idTrip = req.params.id;
-    connection.query(`SELECT * FROM trip WHERE id=${idTrip}`, (err, results) => {
+    connection.query(`SELECT trip.*, continent_name FROM trip JOIN continent ON continent.id=trip.continent_id WHERE trip.id=${idTrip}`, (err, results) => {
       if (err){
         res.status(500).json({message:'erreur'});
       } else {
