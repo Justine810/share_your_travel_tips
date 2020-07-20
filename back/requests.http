@@ -1,0 +1,55 @@
+### CREER UNE CATÉGORIE
+POST http://localhost:5000/api/category
+Content-Type: application/json
+
+{"category_name":"détente"}
+
+###CONSULTER TOUTES LES CATÉGORIES
+GET http://localhost:5000/api/category
+
+###CONSULTER UNE CATÉGORIE AC SON ID
+GET http://localhost:5000/api/category/9
+
+###MODIFIER UNE CATÉGORIE
+PUT http://localhost:5000/api/category/2
+Content-Type: application/json
+
+{"category_name":"aventure"}
+
+###SUPPRIMER UNE CATÉGORIE
+DELETE http://localhost:5000/api/category/4
+
+###CONSULTER TOUTES LES CONTINENTS
+GET http://localhost:5000/api/continent
+
+###CONSULTER UN CONTINENT AC SON ID
+GET http://localhost:5000/api/continent/2
+
+### CREER UN VOYAGE
+POST http://localhost:5000/api/trip
+Content-Type: application/json
+
+{"destination":"Sri Lanka",
+"picture":"url",
+"tips":"Randonnée Adam's Peak de nuit pendant la période du pélérinage",
+"continent_id":4}
+
+###CONSULTER TOUS LES VOYAGES
+GET http://localhost:5000/api/trip
+
+###CONSULTER UN VOYAGE AC SON ID
+GET http://localhost:5000/api/trip/3
+
+###MODIFIER UN VOYAGE
+PUT http://localhost:5000/api/trip/3
+Content-Type: application/json
+
+{"tips":"test"}
+
+###SUPPRIMER UN VOYAGE
+DELETE http://localhost:5000/api/trip/3
+
+
+
+
+

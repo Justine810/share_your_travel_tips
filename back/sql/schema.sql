@@ -38,25 +38,26 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS `share_your_tt`.`category_has_travel` (
+CREATE TABLE IF NOT EXISTS `share_your_tt`.`trip_has_category` (
   `category_id` INT(11) NOT NULL,
-  `travel_id` INT(11) NOT NULL,
-  PRIMARY KEY (`category_id`, `travel_id`),
-  INDEX `fk_category_has_travel_travel1_idx` (`travel_id` ASC),
-  INDEX `fk_category_has_travel_category_idx` (`category_id` ASC),
-  CONSTRAINT `fk_category_has_travel_category`
+  `trip_id` INT(11) NOT NULL,
+  PRIMARY KEY (`category_id`, `trip_id`),
+  INDEX `fk_category_has_trip_trip1_idx` (`trip_id` ASC),
+  INDEX `fk_category_has_trip_category_idx` (`category_id` ASC),
+  CONSTRAINT `fk_category_has_trip_category`
     FOREIGN KEY (`category_id`)
     REFERENCES `share_your_tt`.`category` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_category_has_travel_travel1`
-    FOREIGN KEY (`travel_id`)
+  CONSTRAINT `fk_category_has_trip_trip1`
+    FOREIGN KEY (`trip_id`)
     REFERENCES `share_your_tt`.`trip` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

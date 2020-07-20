@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended : true}));
 
-connection.query('SELECT id, destination, tips FROM travel', (err, res) => {
+connection.query('SELECT * FROM continent', (err, res) => {
     console.log(res);
 });
 
@@ -122,7 +122,7 @@ app.get('/api/trip/:id', (req, res) => {
 app.put('/api/trip/:id', (req, res) => {
     const idTrip = req.params.id;
     const newData = req.body;
-    connection.query('UPDATE playlist SET ? WHERE id = ?', [newData, idTrip], err => {
+    connection.query('UPDATE trip SET ? WHERE id = ?', [newData, idTrip], err => {
         if(err) {
             res.status(500).send("Erreur lors de la modification du voyage");
         } else {
@@ -134,7 +134,7 @@ app.put('/api/trip/:id', (req, res) => {
 // SUPPRIMER UN VOYAGE AVEC SON ID
 app.delete('/api/trip/:id', (req, res) => {
     const idTrip = req.params.id;
-    connection.query('DELETE FROM playlist WHERE id = ?', [idTrip], err => {
+    connection.query('DELETE FROM trip WHERE id = ?', [idTrip], err => {
         if(err) {
             res.status(500).send("Erreur lors de la suppression d'un voyage");
         } else {
