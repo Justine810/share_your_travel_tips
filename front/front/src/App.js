@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import TripList from './TripList';
 import Navbar from './Navbar';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
       <Navbar />
         <Switch>
           <Route exact path="/tips">
-            </Route>
+            <TripList />
+          </Route>
             <Route exact path="/categories">
             </Route>
         </Switch>
