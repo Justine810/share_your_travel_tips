@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 
 function TripList() {
   const [trips, setTrips] = useState([]);
@@ -27,4 +27,4 @@ function TripList() {
     </div>
   );
 
-export default TripList;
+export default TripList;*/
