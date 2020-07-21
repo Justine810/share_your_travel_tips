@@ -29,15 +29,21 @@ export default function Navbar() {
           <Toolbar className="content-nav">
             <div>
               <a href="/">
-                <img src="/logo.png" alt="logo TripTips" />
+                <img src="/logo-triptips.png" alt="logo TripTips" />
               </a>
             </div>
             <span className="desktop-link">
               <Link className="link" to="/tips">
-                <Button>Tous les tips</Button>
+                <Button>Tips</Button>
+              </Link>
+              <Link className="link" to="/continents">
+                <Button>Continents</Button>
               </Link>
               <Link className="link" to="/categories">
                 <Button>Catégories</Button>
+              </Link>
+              <Link className="link" to="/partage-ton-tip">
+                <Button>Partage ton tip</Button>
               </Link>
             </span>
 
@@ -57,8 +63,14 @@ export default function Navbar() {
         <Link className="link" to="Tips" onClick={() => setMobileNavActive(false)}>
           <Button>Tips</Button>
         </Link>
+        <Link className="link" to="/continents" onClick={() => setMobileNavActive(false)}>
+          <Button>Continents</Button>
+        </Link>
         <Link className="link" to="/categories" onClick={() => setMobileNavActive(false)}>
           <Button>Catégories</Button>
+        </Link>
+        <Link className="link" to="/partage-ton-tip" onClick={() => setMobileNavActive(false)}>
+          <Button>Partage ton tip</Button>
         </Link>
       </div>
     </div>
