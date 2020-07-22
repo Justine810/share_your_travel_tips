@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TripList from './TripList';
 import Navbar from './Navbar';
+import AdminPage from './AdminPage';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
           <Route exact path="/tips">
             <TripList />
           </Route>
-            <Route exact path="/categories">
+            <Route exact path="/partage-ton-tip">
+            <AdminPage />
             </Route>
         </Switch>
     </Router>
