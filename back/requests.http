@@ -30,24 +30,26 @@ POST http://localhost:5000/api/trip
 Content-Type: application/json
 
 {"destination":"Sri Lanka",
-"picture":"https://zupimages.net/viewer.php?id=20/30/4p6x.jpg",
-"tips":"Randonnée Adam's Peak de nuit pendant la période du pélérinage",
-"continent_id":4}
+"picture":"https://www.parcourscanada.com/wp-content/uploads/2018/12/tdb_003yDJ0248DC0ce5xs8x.jpg",
+"tips":"Nuit en bivouac dans le désert du Sahara. Super adresse à l'Auberge du Sud. Au programme : coucher de soleil, observation des étoiles, promenade dans le désert et repas traditionnel",
+"continent_id":1}
 
 ###CONSULTER TOUS LES VOYAGES
-GET http://localhost:5000/api/trip
+GET http://localhost:5000/api/trips
 
 ###CONSULTER UN VOYAGE AC SON ID
 GET http://localhost:5000/api/trip/8
 
 ###MODIFIER UN VOYAGE
-PUT http://localhost:5000/api/trip/8
+PUT http://localhost:5000/api/trip/39
 Content-Type: application/json
 
-{"tips":"test"}
+{"destination":"Canada",
+"tips":"Tip : si votre budget le permet, offrez-vous un baptème de l'air en hydravion au dessus du lac de la Mauritie, c'est magique",
+"continent_id":2}
 
 ###SUPPRIMER UN VOYAGE
-DELETE http://localhost:5000/api/trip/7
+DELETE http://localhost:5000/api/trip/28
 
 
 

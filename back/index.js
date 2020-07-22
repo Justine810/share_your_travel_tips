@@ -92,7 +92,7 @@ app.post('/api/trip', (req, res) => {
 });
 
 // CONSULTER TOUS LES VOYAGES
-app.get('/api/trip', (req, res) => {
+app.get('/api/trips', (req, res) => {
     connection.query('SELECT trip.*, continent_name FROM trip JOIN continent ON continent.id=trip.continent_id', (err, results) => {
       if (err){
         res.status(500).json({message:'erreur'});
