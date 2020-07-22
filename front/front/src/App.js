@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TripList from './TripList';
 import Navbar from './Navbar';
 import AdminPage from './AdminPage';
+import Filter from './Filter';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </Route>
             <Route exact path="/partage-ton-tip">
             <AdminPage />
+            </Route>
+            <Route exact path="/continents">
+            <Filter />
             </Route>
         </Switch>
     </Router>
