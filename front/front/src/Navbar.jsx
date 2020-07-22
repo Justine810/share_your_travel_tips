@@ -60,7 +60,7 @@ export default function Navbar() {
       </div>
 
       <div className={!mobileNavActive ? 'nav-mobile' : 'nav-mobile active'}>
-        <Link className="link" to="Tips" onClick={() => setMobileNavActive(false)}>
+        <Link className="link" to="/tips" onClick={() => setMobileNavActive(false)}>
           <Button>Tips</Button>
         </Link>
         <Link className="link" to="/continents" onClick={() => setMobileNavActive(false)}>
