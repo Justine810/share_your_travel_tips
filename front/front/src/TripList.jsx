@@ -3,8 +3,8 @@ import { Container, Grid } from '@material-ui/core';
 import './TripList.scss';
 
 function TripList() {
-  const [trips, setTrips] = useState(null);
-
+ const [trips, setTrips] = useState(null);
+ 
   useEffect(() => {
     fetch('/api/trips')
       .then(res => res.json())

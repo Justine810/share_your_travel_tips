@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import TripList from "./TripList";
 import axios from "axios";
 
-const continents = ["", "Afrique", "Amérique du Nord", "Amérique du Sud", "Asie", "Europe", "Océanie"];
+const continents = ["Filtrer par continent", "Afrique", "Amérique du Nord", "Amérique du Sud", "Asie", "Europe", "Océanie"];
 
-export default class App extends Component {
+export default class Filter extends Component {
   state = {
     articles: [],
     filter: ""
@@ -19,7 +19,7 @@ export default class App extends Component {
       .get("/api/trips")
       .then(res => res.data)
       .then(data => {
-        this.setState({ trip: data.trip });
+        this.setState({ trip: data });
       });
   };
 
@@ -31,9 +31,8 @@ export default class App extends Component {
 
   render() {
     const { articles, filter } = this.state;
-    const filteredTrips = articles
-      .filter(article => !filter || article.trip.continent_id === filter);
-    return (
+    const filteredTrips = articles.filter(article => !filter || article.trip.continent_name === filter);
+      return (
       <div className="App">
         <select onChange={this.handleFilterChange}>
           {continents.map(continent => (

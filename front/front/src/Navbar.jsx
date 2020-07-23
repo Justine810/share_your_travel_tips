@@ -37,10 +37,7 @@ export default function Navbar() {
                 <Button>Tips</Button>
               </Link>
               <Link className="link" to="/continents">
-                <Button>Continents</Button>
-              </Link>
-              <Link className="link" to="/categories">
-                <Button>Catégories</Button>
+                <Button>Par continent</Button>
               </Link>
               <Link className="link" to="/partage-ton-tip">
                 <Button>Partage ton tip</Button>
