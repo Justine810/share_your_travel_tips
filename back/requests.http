@@ -41,12 +41,10 @@ GET http://localhost:5000/api/trips
 GET http://localhost:5000/api/trip/8
 
 ###MODIFIER UN VOYAGE
-PUT http://localhost:5000/api/trip/39
+PUT http://localhost:5000/api/trip/48
 Content-Type: application/json
 
-{"destination":"Canada",
-"tips":"Tip : si votre budget le permet, offrez-vous un baptème de l'air en hydravion au dessus du lac de la Mauritie, c'est magique",
-"continent_id":2}
+{"tips":"Tip : si votre budget le permet, offrez-vous un baptème de l'air en hydravion au dessus du lac de la Mauritie, c'est magique"}
 
 ###SUPPRIMER UN VOYAGE
 DELETE http://localhost:5000/api/trip/28
