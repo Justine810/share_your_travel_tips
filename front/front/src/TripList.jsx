@@ -2,14 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import './TripList.scss';
 
-function TripList() {
+function TripList({articles}) {
  const [trips, setTrips] = useState(null);
  
   useEffect(() => {
-    fetch('/api/trips')
+    if (articles && articles.length) {
+      console.log("articles");
+      setTrips(articles)
+    }
+    else {
+      fetch('/api/trips')
       .then(res => res.json())
       .then(data => setTrips(data));
-  }, []);
+    }
+  }, [articles]);
 
   if (!trips) {
     return <div>Loading...</div>;

@@ -8,7 +8,7 @@ const continents = ["Filtrer par continent", "Afrique", "Amérique du Nord", "Am
 export default class Filter extends Component {
   state = {
     articles: [],
-    filter: ""
+    filter: "Asie"
   };
   componentDidMount() {
     this.getTrips();
@@ -19,7 +19,7 @@ export default class Filter extends Component {
       .get("/api/trips")
       .then(res => res.data)
       .then(data => {
-        this.setState({ trip: data });
+        this.setState({ articles: data });
       });
   };
 
@@ -31,7 +31,7 @@ export default class Filter extends Component {
 
   render() {
     const { articles, filter } = this.state;
-    const filteredTrips = articles.filter(article => !filter || article.trip.continent_name === filter);
+    const filteredTrips = articles.filter(article => !filter || article.continent_name === filter);
       return (
       <div className="App">
         <select onChange={this.handleFilterChange}>
