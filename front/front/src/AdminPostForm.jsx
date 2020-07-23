@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 import {
-  Input,
   TextField,
   Box,
   Grid,
-  Select,
-  MenuItem,
-  InputLabel,
-  Button,
-  FormControl,
-  Chip
+  Button
 } from '@material-ui/core';
 
 const AdminPostForm = () => {
-  const { handleSubmit, register, control } = useForm();
+  const { handleSubmit, register } = useForm();
 
   const onSubmit = (data) => {
       const dataForms = {

@@ -63,9 +63,6 @@ export default function Navbar() {
         <Link className="link" to="/continents" onClick={() => setMobileNavActive(false)}>
           <Button>Continents</Button>
         </Link>
-        <Link className="link" to="/categories" onClick={() => setMobileNavActive(false)}>
-          <Button>Catégories</Button>
-        </Link>
         <Link className="link" to="/partage-ton-tip" onClick={() => setMobileNavActive(false)}>
           <Button>Partage ton tip</Button>
         </Link>
