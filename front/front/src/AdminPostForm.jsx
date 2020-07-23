@@ -16,47 +16,24 @@ import {
   Chip
 } from '@material-ui/core';
 
-const AdminPostForm = props => {
+const AdminPostForm = () => {
   const { handleSubmit, register, control } = useForm();
-  const { updateMode, tripIdToUpdate, tripsData } = props;
 
-  const onSubmit = data => {
-    // ajouté un tip
-    if (!updateMode) {
+  const onSubmit = (data) => {
       const dataForms = {
-        ...data
+        ...data,
       };
-
       axios
         .post('/api/trip', dataForms)
-        .then(res => res.data)
-        .then(res => {
+        .then((res) => res.data)
+        .then((res) => {
           alert(`Le tip a été ajouté`);
         })
         .catch(e => {
           console.error(e);
           alert(`Erreur concernant l'ajout du tip ${e.message}`);
         });
-        
-
-
     }
-
-    // mettre à jour un tip
-    const dataForms = {
-      ...data
-    };
-    axios
-      .put(`/api/trip/${tripIdToUpdate}`, dataForms)
-      .then(res => res.data)
-      .then(res => {
-        alert(`Tip modifié avec succès !`);
-      })
-      .catch(e => {
-        console.error(e);
-        alert(`Erreur concernant la modification du tip ${e}`);
-      });
-  };
 
   return (
     <Box p={2} bgcolor="background.paper" display="flex">
@@ -74,7 +51,7 @@ const AdminPostForm = props => {
           </Grid>
           <Grid item xs={6}>
             <TextField
-              name="continent_name"
+              name="continent_id"
               type="text"
               label="Continent"
               inputRef={register}
@@ -107,8 +84,7 @@ const AdminPostForm = props => {
           </Grid>
 
           <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary">
-              {updateMode ? "Mettre à jour" : 'Ajouter'}
+            <Button type="submit" variant="contained" color="primary">Ajouter le tip
             </Button>
           </Grid>
         </Grid>

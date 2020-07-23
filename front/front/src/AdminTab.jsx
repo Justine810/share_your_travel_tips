@@ -10,7 +10,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles({
@@ -21,11 +20,7 @@ const useStyles = makeStyles({
 
 const AdminTab = props => {
   const {
-    setUpdateMode,
-    tripIdToUpdate,
-    setTripIdToUpdate,
     tripsData,
-    setTripsData
   } = props;
 
   const classes = useStyles();
@@ -49,7 +44,6 @@ const AdminTab = props => {
               <TableCell align="center">Continent</TableCell>
               <TableCell align="center">Tips</TableCell>
               <TableCell align="center">Supprimer</TableCell>
-              <TableCell align="center">Mettre à jour</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -78,18 +72,6 @@ const AdminTab = props => {
                     onClick={() => DeleteTrip(trip.id)}
                   >
                <DeleteIcon fontSize="large" />
-                  </IconButton>
-                </TableCell>
-                <TableCell align="center">
-                  <IconButton
-                    aria-label="edit"
-                    className={classes.margin}
-                    onClick={() => {
-                      setTripIdToUpdate(trip.id);
-                      setUpdateMode(true);
-                    }}
-                  >
-               <EditIcon fontSize="large" />
                   </IconButton>
                 </TableCell>
               </TableRow>
